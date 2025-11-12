@@ -64,7 +64,7 @@ import { useI18n } from 'vue-i18n'
 import UnitInput from '@/components/shared/UnitInput.vue'
 import type { DeviceLoad } from '@/domain/types'
 
-const props = defineProps<{
+defineProps<{
   device: DeviceLoad
   index: number
 }>()

@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   label: string
   value: number
   min: string

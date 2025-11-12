@@ -3,16 +3,17 @@ import { chemistryMap, defaultChemistryId } from '@/domain/chemistries'
 import type { CalculationParams, UserSettings } from '@/domain/types'
 import { readStorage, STORAGE_KEYS, writeStorage } from '@/composables/usePersistence'
 
-const defaultVoltage = chemistryMap[defaultChemistryId].typicalPackVoltages[0]
+const defaultChemistry = chemistryMap[defaultChemistryId];
+const defaultVoltage = defaultChemistry?.typicalPackVoltages[0]
 
 const defaultSettings: UserSettings = {
   theme: 'system',
-  efficiency: chemistryMap[defaultChemistryId].defaultEfficiency,
-  depthOfDischarge: chemistryMap[defaultChemistryId].defaultDoD.min,
+  efficiency: defaultChemistry?.defaultEfficiency ?? 0.95,
+  depthOfDischarge: defaultChemistry?.defaultDoD?.min ?? 0,
   safetyBuffer: 0.05,
   temperatureDerate: 0,
   chemistryId: defaultChemistryId,
-  nominalVoltage: defaultVoltage,
+  nominalVoltage: defaultVoltage ?? 12,
   strategy: 'cost',
   locale: 'en',
   version: 1,

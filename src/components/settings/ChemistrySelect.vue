@@ -45,7 +45,7 @@ const settings = computed(() => settingsStore.settings)
 
 const packVoltages = computed(() => {
   const chemistry = getChemistry(settings.value.chemistryId)
-  return chemistry.typicalPackVoltages
+  return chemistry?.typicalPackVoltages
 })
 
 const onChemistryChange = (event: Event) => {

@@ -36,6 +36,7 @@ export default defineConfig({
       includeAssets: ['icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable.png'],
     }),
   ],
+  // @ts-ignore
   test: {
     globals: true,
     environment: 'jsdom',
