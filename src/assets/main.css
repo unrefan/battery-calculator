@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+  --surface: #f9fafb;
+  --surface-muted: #f3f4f6;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --focus: #3b82f6;
+}
+
+.dark {
+  --surface: #0f172a;
+  --surface-muted: #1f2937;
+  --ink: #f8fafc;
+  --ink-muted: #cbd5f5;
+}
+
+.high {
+  --surface: #000000;
+  --surface-muted: #111827;
+  --ink: #ffffff;
+  --ink-muted: #fef3c7;
+}
+
+body {
+  @apply bg-[var(--surface)] text-[var(--ink)] antialiased;
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-focus ring-offset-2 ring-offset-surface;
+}
+
+.card {
+  @apply rounded-xl border border-slate-200/70 bg-white/90 p-4 shadow-sm dark:border-slate-700/60 dark:bg-slate-900/70;
+}
